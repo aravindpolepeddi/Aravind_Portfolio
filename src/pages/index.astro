@@ -1,11 +1,42 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Projects from '../components/Projects.astro';
+import Skills from '../components/Skills.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aravind Polepeddi - DevOps & Cloud Engineer. Building reliable, secure, and scalable infrastructure." />
+  <meta name="keywords" content="DevOps, Kubernetes, Docker, ArgoCD, GitOps, Cloud Engineer" />
+
+  <!-- Open Graph (for LinkedIn/social sharing) -->
+  <meta property="og:title" content="Aravind Polepeddi - DevOps & Cloud Engineer" />
+  <meta property="og:description" content="Building reliable, secure, and scalable infrastructure." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-portfolio-url.com" />
+
+  <title>Aravind Polepeddi - DevOps & Cloud Engineer</title>
+
+  <!-- Google Fonts: Fira Code for code blocks -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <Header />
+  <main>
+    <Hero />
+    <Projects />
+    <Skills />
+    <Contact />
+  </main>
+  <Footer />
+</body>
+</html>

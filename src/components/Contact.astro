@@ -1,0 +1,137 @@
+<section id="contact" class="contact-section">
+  <div class="container">
+    <h2 class="section-title">Get In Touch</h2>
+    <p class="section-subtitle">I'm open to new opportunities</p>
+
+    <div class="contact-content">
+      <div class="contact-info">
+        <div class="info-item">
+          <span class="info-icon">📧</span>
+          <div>
+            <h4>Email</h4>
+            <a href="mailto:polepeddiaravind@gmail.com">polepeddiaravind@gmail.com</a>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">💼</span>
+          <div>
+            <h4>LinkedIn</h4>
+            <a href="https://www.linkedin.com/in/aravind-polepeddi/" target="_blank">linkedin.com/in/aravind-polepeddi</a>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">🐙</span>
+          <div>
+            <h4>GitHub</h4>
+            <a href="https://github.com/aravindpolepeddi/aravindpolepeddi" target="_blank">github.com/aravindpolepeddi</a>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">📍</span>
+          <div>
+            <h4>Location</h4>
+            <span> USA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-cta">
+        <div class="cta-card">
+          <h3>Let's Work Together</h3>
+          <p>
+            I'm currently open to DevOps/SRE and cloud engineering roles.
+            Feel free to reach out for any opportunities or just to say hello!
+          </p>
+          <a href="mailto:polepeddiaravind@gmail.com" class="btn">
+            Say Hello 👋
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-section {
+    background: var(--bg-dark);
+  }
+
+  .contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .info-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  .info-icon {
+    font-size: 1.5rem;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-card);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+  }
+
+  .info-item h4 {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .info-item a,
+  .info-item span {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    transition: color 0.3s;
+  }
+
+  .info-item a:hover {
+    color: var(--primary);
+  }
+
+  .cta-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 40px;
+    text-align: center;
+    transition: border-color 0.3s;
+  }
+
+  .cta-card:hover {
+    border-color: var(--primary);
+  }
+
+  .cta-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+  }
+
+  .cta-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 768px) {
+    .contact-content {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+</style>

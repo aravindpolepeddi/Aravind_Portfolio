@@ -1,0 +1,195 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="#home" class="logo">
+          <span class="logo-icon">&lt;/&gt;</span>
+          <span class="logo-text">Aravind Polepeddi</span>
+        </a>
+        <p class="footer-tagline">
+          Building reliable infrastructure.<br>
+          Deploying with confidence.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://github.com/aravindpolepeddi/aravindpolepeddi" target="_blank">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/aravind-polepeddi/" target="_blank">LinkedIn</a></li>
+            <li><a href="mailto:polepeddiaravind@gmail.com">Email</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Tech</h4>
+          <ul>
+            <li>Kubernetes</li>
+            <li>ArgoCD</li>
+            <li>Docker</li>
+            <li>GitHub Actions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-divider"></div>
+      <p class="footer-copy">
+        © 2025 Aravind. Built with Astro & deployed with GitOps.
+      </p>
+      <p class="footer-source">
+        <a href="https://github.com/aravindpolepeddi/Aravind_Portfolio" target="_blank">
+          View Source on GitHub
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: rgba(15, 23, 42, 0.95);
+    border-top: 1px solid var(--border);
+    padding: 60px 20px 30px;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  /* Brand */
+  .footer-brand {
+    flex: 1;
+    max-width: 300px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .logo-icon {
+    color: var(--primary);
+    font-size: 1.4rem;
+  }
+
+  .footer-tagline {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  /* Links */
+  .footer-links {
+    display: flex;
+    gap: 60px;
+  }
+
+  .footer-col h4 {
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+
+  .footer-col ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-col li {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    transition: color 0.3s;
+  }
+
+  .footer-col a {
+    color: var(--text-secondary);
+    transition: color 0.3s;
+  }
+
+  .footer-col a:hover,
+  .footer-col li:hover {
+    color: var(--primary);
+  }
+
+  /* Bottom */
+  .footer-bottom {
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  .footer-divider {
+    width: 100%;
+    height: 1px;
+    background: var(--border);
+    margin-bottom: 24px;
+  }
+
+  .footer-copy {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+  }
+
+  .footer-source a {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    transition: color 0.3s;
+  }
+
+  .footer-source a:hover {
+    color: var(--primary);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .footer-brand {
+      max-width: 100%;
+    }
+
+    .logo {
+      justify-content: center;
+    }
+
+    .footer-links {
+      gap: 40px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footer-links {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+  }
+</style>

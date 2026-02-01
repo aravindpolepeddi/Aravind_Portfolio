@@ -1,0 +1,187 @@
+<section id="home" class="hero">
+  <div class="hero-content">
+    <p class="hero-greeting">Hello, World! 👋</p>
+    <h1 class="hero-title">
+      I'm <span class="highlight">Aravind Polepeddi</span>
+    </h1>
+    <h2 class="hero-subtitle">
+      DevOps & Cloud Engineer
+    </h2>
+    <p class="hero-description">
+      I build reliable, secure, and scalable infrastructure.
+      Passionate about Kubernetes, GitOps, and automation.
+    </p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn">View My Work</a>
+      <a href="#contact" class="btn btn-outline">Contact Me</a>
+    </div>
+    <div class="hero-socials">
+      <a href="https://github.com/aravindpolepeddi/aravindpolepeddi" target="_blank" class="social-link">GitHub</a>
+      <a href="https://www.linkedin.com/in/aravind-polepeddi/" target="_blank" class="social-link">LinkedIn</a>
+      <a href="mailto:polepeddiaravind@gmail.com" class="social-link">Email</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="code-block">
+      <div class="code-dots">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+      </div>
+      <pre class="code-content"><span class="code-comment"># Deploy portfolio via GitOps</span>
+<span class="code-cmd">$ kubectl get pods -n portfolio</span>
+<span class="code-output">NAME                    READY   STATUS</span>
+<span class="code-output">frontend-7d8f9c-abc12   1/1     Running</span>
+<span class="code-output">backend-5e6a7b-def34    1/1     Running</span>
+<span class="code-comment"># ArgoCD syncing from Git...</span>
+<span class="code-cmd">$ argocd app get portfolio</span>
+<span class="code-output">Health:  Healthy ✓</span>
+<span class="code-output">Sync:    In Sync ✓</span></pre>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px 80px;
+    gap: 60px;
+  }
+
+  .hero-content {
+    flex: 1;
+    max-width: 550px;
+  }
+
+  .hero-greeting {
+    color: var(--accent);
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+
+  .hero-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  .highlight {
+    color: var(--primary);
+  }
+
+  .hero-subtitle {
+    font-size: 1.6rem;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  .hero-description {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    margin-bottom: 32px;
+    max-width: 450px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+
+  .hero-socials {
+    display: flex;
+    gap: 20px;
+  }
+
+  .social-link {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    transition: color 0.3s;
+  }
+
+  .social-link:hover {
+    color: var(--primary);
+  }
+
+  /* Code Block Visual */
+  .hero-visual {
+    flex: 1;
+    max-width: 480px;
+  }
+
+  .code-block {
+    background: var(--bg-card);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+
+  .code-dots {
+    display: flex;
+    gap: 8px;
+    padding: 14px 18px;
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  .dot.red { background: #ff5f57; }
+  .dot.yellow { background: #febc2e; }
+  .dot.green { background: #28c840; }
+
+  .code-content {
+    padding: 20px 24px;
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 0.85rem;
+    line-height: 1.9;
+    white-space: pre;
+    overflow-x: auto;
+  }
+
+  .code-comment { color: #6b7280; font-style: italic; }
+  .code-cmd { color: var(--accent); }
+  .code-output { color: var(--text-secondary); }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .hero {
+      flex-direction: column;
+      text-align: center;
+      padding-top: 120px;
+    }
+
+    .hero-description {
+      max-width: 100%;
+    }
+
+    .hero-actions {
+      justify-content: center;
+    }
+
+    .hero-socials {
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .hero-title {
+      font-size: 2.4rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.3rem;
+    }
+  }
+</style>
