@@ -1,7 +1,7 @@
 FROM node:lts-alpine AS build
 WORKDIR /portfolio-app
 #installing dependedncies
-COPY package* json ./
+COPY /package*.json ./
 RUN npm install
 #Sourcecode copy
 COPY . .
