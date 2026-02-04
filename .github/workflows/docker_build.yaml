@@ -20,7 +20,7 @@ jobs:
       run: |
         TAG=${{ github.sha }}
         docker build -t aravind1843/portfolio:$TAG .
-        docker push aravind1843/portfolio:latest
+        docker push aravind1843/portfolio:$TAG
     
     - name: Update K8s manifest
       run: |
