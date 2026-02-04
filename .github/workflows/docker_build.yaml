@@ -32,4 +32,4 @@ jobs:
         git config user.email "actions@github.com"
         git add deployment.yaml
         git commit -m "update image to $TAG"
-        git push https://${{ secrets.GITHUB_TOKEN }}@github.com/aravindpolepeddi/portfolio-k8s-manifests.git main
+        git push https://${{ secrets.PAT_TOKEN }}@github.com/aravindpolepeddi/portfolio-k8s-manifests.git main
