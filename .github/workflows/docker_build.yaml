@@ -1,0 +1,35 @@
+name: Docker build
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+    name: packer workflow
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out the repo
+      uses: actions/checkout@v2
+
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Build and Push
+      run: |
+        TAG=${{ github.sha }}
+        docker build -t aravind1843/portfolio:$TAG .
+        docker push aravind1843/portfolio:latest
+    
+    - name: Update K8s manifest
+      run: |
+        TAG=${{ github.sha }}
+        git clone https://github.com/aravindpolepeddi/portfolio-k8s-manifests.git
+        cd portfolio-k8s-manifests
+        sed -i "s|image: aravind1843/portfolio:.*|image: aravind1843/portfolio:$TAG|" k8s/deployment.yaml
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+        git add k8s/deployment.yaml
+        git commit -m "update image to $TAG"
+        git push https://${{ secrets.GITHUB_TOKEN }}@github.com/aravindpolepeddi/portfolio-k8s-manifests.git main
