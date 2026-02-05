@@ -4,7 +4,7 @@ on:
     branches: [ master ]
 jobs:
   build:
-    name: packer workflow
+    name: docker build and trivy scan workflow
     runs-on: ubuntu-latest
     steps:
     - name: Check out the repo
@@ -33,3 +33,24 @@ jobs:
         git add deployment.yaml
         git commit -m "update image to $TAG"
         git push https://${{ secrets.PAT_TOKEN_GITOPS }}@github.com/aravindpolepeddi/portfolio-k8s-manifests.git main
+    
+    - name: Run Trivy vulnerability scanner
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: aravind1843/portfolio:${{ github.sha }}
+        format: 'sarif'
+        output: 'trivy-results.sarif'
+        severity: 'CRITICAL,HIGH'
+
+    - name: Upload Trivy results to GitHub Security
+      uses: github/codeql-action/upload-sarif@v2
+      with:
+        sarif_file: 'trivy-results.sarif'
+    
+    - name: Trivy security gate
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: aravind1843/portfolio:${{ github.sha }}
+        format: 'table'
+        exit-code: '1'
+        severity: 'CRITICAL,HIGH'
