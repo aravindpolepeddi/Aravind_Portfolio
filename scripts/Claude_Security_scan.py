@@ -4,7 +4,7 @@ import sys
 import anthropic
 
 # Fetch the variable mapped in the YAML
-api_key = os.environ.get("AI_AUTO_REMEDIATION_TRIVY")
+api_key = os.environ.get("ANTHROPIC_API_KEY")
 if not api_key:
     raise ValueError("AI_AUTO_REMEDIATION_TRIVY not found in environment!")
 
