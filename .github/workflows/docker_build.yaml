@@ -57,3 +57,8 @@ jobs:
         format: 'table'
         exit-code: '1'
         severity: 'CRITICAL,HIGH'
+
+    - name: Run Python Script
+      env:
+        ANTHROPIC_API_KEY: ${{ secrets.AI_AUTO_REMEDIATION_TRIVY }} 
+      run: python scripts/Claude_Security_scan.py
